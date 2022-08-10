@@ -40,7 +40,7 @@ const Navbar = () => {
           </LinkContainerSty>
         </Link>
 
-        <Link to='/'>
+        <Link to=''>
           <LinkContainerSty
             onClick={() => {
               setOpenModal(!openModal && !openUser);
@@ -52,7 +52,7 @@ const Navbar = () => {
         </Link>
 
         <UserNavSty>
-          <Link to="/">
+          <Link to="">
             <LinkContainerSty
               onClick={() => {
                 setOpenUser(!openUser && !openModal);
