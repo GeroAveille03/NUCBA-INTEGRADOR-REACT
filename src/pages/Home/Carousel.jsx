@@ -19,13 +19,13 @@ const CarouselHome = () => {
       loop={true}
     >
       <SwiperSlide>
-        <CarouselImg src="https://i.imgur.com/OfFFdnb.png" alt="" />
+        <CarouselImg src="https://i.imgur.com/SCv52yR.png" alt="" />
       </SwiperSlide>
       <SwiperSlide>
-        <CarouselImg src="https://i.imgur.com/14pybPl.png" alt="" />
+        <CarouselImg src="https://i.imgur.com/engd8Ai.png" alt="" />
       </SwiperSlide>
       <SwiperSlide>
-        <CarouselImg src="https://i.imgur.com/V6SqzXt.png" alt="" />
+        <CarouselImg src="https://i.imgur.com/r6FUzPe.png" alt="" />
       </SwiperSlide>
       {/* <SwiperSlide>Slide 4</SwiperSlide>
       <SwiperSlide>Slide 5</SwiperSlide>

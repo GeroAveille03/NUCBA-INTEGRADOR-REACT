@@ -28,7 +28,7 @@ const Navbar = () => {
       <div>
         <Link to="/">
           <LogoSty
-            src="https://www.tiendaunion.com.ar/sistema/skin_base_tiendaunion/assets/img/id.svg"
+            src="https://i.imgur.com/nAc9UkE.png"
             alt=""
           />
         </Link>
@@ -40,7 +40,7 @@ const Navbar = () => {
           </LinkContainerSty>
         </Link>
 
-        <Link to=''>
+        {/* <Link to=''> */}
           <LinkContainerSty
             onClick={() => {
               setOpenModal(!openModal && !openUser);
@@ -49,10 +49,10 @@ const Navbar = () => {
             <FaShoppingCart />
             {/* <ModalCart></ModalCart> */}
           </LinkContainerSty>
-        </Link>
+        {/* </Link> */}
 
         <UserNavSty>
-          <Link to="">
+          {/* <Link to=""> */}
             <LinkContainerSty
               onClick={() => {
                 setOpenUser(!openUser && !openModal);
@@ -61,7 +61,7 @@ const Navbar = () => {
               <FaUserAlt />
               <span>Iniciá Sesión</span>
             </LinkContainerSty>
-          </Link>
+          {/* </Link> */}
           {/* <ModalUser /> */}
         </UserNavSty>
       </LinksContainerSty>

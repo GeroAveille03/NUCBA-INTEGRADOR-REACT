@@ -13,7 +13,7 @@ const ModalUser = () => {
     >
       <UsernameStyled>Hola Gero!</UsernameStyled>
       <HrStyled />
-      <Link to='/'>Mis Ordenes
+      <Link to='/mis-ordenes'>Mis Ordenes
      </Link>
       <p>Cerrar Sesión</p>
     </ModalContainerStyled>

@@ -2,7 +2,7 @@ export const products = [
   {
     id: 1,
     title: "Camiseta Titular 2022",
-    img: "https://i.imgur.com/OfFFdnb.png",
+    img: "https://i.imgur.com/SCv52yR.png",
     desc: "Camiseta Roja y Blanca Titular Kappa",
     price: 12400,
     category: "Camisetas",
@@ -10,7 +10,7 @@ export const products = [
   {
     id: 2,
     title: "Camiseta Suplente 2022",
-    img: "https://i.imgur.com/14pybPl.png",
+    img: "https://i.imgur.com/engd8Ai.png",
     desc: "Camiseta Azul y Fluor Suplente Kappa",
     price: 12400,
     category: "Camisetas",
@@ -18,7 +18,7 @@ export const products = [
   {
     id: 3,
     title: "Camiseta Alternativa 2022",
-    img: "https://i.imgur.com/V6SqzXt.png",
+    img: "https://i.imgur.com/r6FUzPe.png",
     desc: "Camiseta Gris y Roja Alternativa Kappa",
     price: 12400,
     category: "Camisetas",
@@ -26,7 +26,7 @@ export const products = [
   {
     id: 4,
     title: "Camiseta Arquero Verde 2022",
-    img: "https://i.imgur.com/eclT8oe.png",
+    img: "https://i.imgur.com/odvqmMr.png",
     desc: "Camiseta Verde de Arquero Kappa",
     price: 12400,
     category: "Camisetas",
@@ -58,7 +58,7 @@ export const products = [
   {
     id: 8,
     title: "Camiseta Alternativa Azul 2021",
-    img: "https://i.imgur.com/Mb5U4jT.png",
+    img: "https://i.imgur.com/Ry5gs3Q.png",
     desc: "Camiseta Azul Alternativa 2021 Kappa",
     price: 10000,
     category: "Camisetas",
@@ -82,7 +82,7 @@ export const products = [
   {
     id: 11,
     title: "Chomba Azul Union",
-    img: "https://i.imgur.com/JQbDcFY.png",
+    img: "https://i.imgur.com/rmPxDCc.png",
     desc: "Chomba Azul Union Kappa",
     price: 5000,
     category: "Remeras",
@@ -90,7 +90,7 @@ export const products = [
   {
     id: 12,
     title: "Buzo Rojo y Azul con cierre",
-    img: "https://i.imgur.com/HDZ86cG.png",
+    img: "https://i.imgur.com/FA7bpKD.png",
     desc: "Buzo Rojo y Azul con cierre Kappa",
     price: 8000,
     category: "Camperas",
@@ -98,7 +98,7 @@ export const products = [
   {
     id: 13,
     title: "Buzo Rojo con cierre",
-    img: "https://i.imgur.com/cfoLyk9.png",
+    img: "https://i.imgur.com/muUF6f2.png",
     desc: "Buzo Rojo con cierre Kappa",
     price: 8000,
     category: "Camperas",
@@ -106,7 +106,7 @@ export const products = [
   {
     id: 14,
     title: "Campera Inflable Roja",
-    img: "https://i.imgur.com/5vxV8bm.png",
+    img: "https://i.imgur.com/kATdLhC.png",
     desc: "Campera Inflable Roja Kappa",
     price: 15000,
     category: "Camperas",
@@ -114,7 +114,7 @@ export const products = [
   {
     id: 15,
     title: "Campera Inflable Azul",
-    img: "https://i.imgur.com/S3c1ayy.png",
+    img: "https://i.imgur.com/XYJYA4k.pngg",
     desc: "Campera Inflable Azul Kappa",
     price: 15000,
     category: "Camperas",
@@ -122,7 +122,7 @@ export const products = [
   {
     id: 16,
     title: "Short de Entrenamiento Azul",
-    img: "https://i.imgur.com/mEkhRNg.png",
+    img: "https://i.imgur.com/pnu4QlW.png",
     desc: "Short de Entrenamiento Azul Kappa",
     price: 5500,
     category: "Shorts",
@@ -130,7 +130,7 @@ export const products = [
   {
     id: 17,
     title: "Short de Entrenamiento Rojo",
-    img: "https://i.imgur.com/7WT2JFC.png",
+    img: "https://i.imgur.com/vEnxKKJ.png",
     desc: "Short de Entrenamiento Rojo Kappa",
     price: 5500,
     category: "Shorts",
@@ -138,7 +138,7 @@ export const products = [
   {
     id: 18,
     title: "Short de Juego Rojo",
-    img: "https://i.imgur.com/WWQNBAr.png",
+    img: "https://i.imgur.com/L68GS2W.png",
     desc: "Short de Juego Rojo Kappa",
     price: 5500,
     category: "Shorts",
@@ -146,7 +146,7 @@ export const products = [
   {
     id: 19,
     title: "Short de Juego Blanco",
-    img: "https://i.imgur.com/cgeGpwQ.png",
+    img: "https://i.imgur.com/roWh5qO.png",
     desc: "Short de Juego Blanco Kappa",
     price: 5500,
     category: "Shorts",
@@ -154,7 +154,7 @@ export const products = [
   {
     id: 20,
     title: "Short de Juego Azul",
-    img: "https://i.imgur.com/k0wkCAL.png",
+    img: "https://i.imgur.com/bFg6BqZ.png",
     desc: "Short de Juego Azul Kappa",
     price: 5500,
     category: "Shorts",
@@ -162,7 +162,7 @@ export const products = [
   {
     id: 21,
     title: "Short de Juego Violeta",
-    img: "https://i.imgur.com/cIJK76C.png",
+    img: "https://i.imgur.com/M12JeiL.png",
     desc: "Short de Juego de Arquero Violeta Kappa",
     price: 5500,
     category: "Shorts",

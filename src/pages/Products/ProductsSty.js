@@ -1,5 +1,27 @@
 import styled from "styled-components";
 
+export const ProductsFilterContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 200px;
+  gap: 50px;
+  margin-top: 2rem;
+`
+
+export const CardFilter = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:60px;
+  width: 60px;
+  color: white;
+  background-color: var(--bg-bordo);
+  border: none;
+  font-size: 3em;
+  cursor: pointer;
+`
+
 export const ProductosContainer = styled.div`
   display: grid;
   place-items: center;
@@ -8,7 +30,7 @@ export const ProductosContainer = styled.div`
   grid-template-columns: repeat(auto-fit, 400px);
   row-gap: 3.5rem;
   width: 100%;
-  padding: 1rem 0;
+  margin-top: -100px;
   background-color: var(--bordo-bg);
 `;
 
@@ -40,3 +62,11 @@ export const ProductosCard = styled.div`
     font-size: 1.6em;
   }
 `
+export const ButtonContainerStyled = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 3rem;
+`;
