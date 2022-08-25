@@ -1,10 +1,14 @@
 import React from "react";
 import { ButtonSty } from "./ButtonSty";
 
-const Button = ({ children }) => {
+const Button = ({
+  children,
+  disabled = false,
+  onClick = () => "",
+}) => {
   return (
-    <ButtonSty>
-      <button className="btn">{children}</button>
+    <ButtonSty onClick={onClick} disabled={disabled}>
+      <button className="btn" disabled={disabled}>{children}</button>
     </ButtonSty>
   );
 };

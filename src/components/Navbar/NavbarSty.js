@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { css } from 'styled-components';
+import { motion } from "framer-motion";
 
 export const NavbarContainerSty = styled.div`
     height: 100px;
@@ -6,8 +7,23 @@ export const NavbarContainerSty = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    box-shadow: 0px 4px 6px -6px rgb(255,255,255)
+    box-shadow: 0px 4px 6px -6px rgb(255,255,255);
 `
+
+export const ModalOverlaySty = styled(motion.div)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: calc(100vw - 450px);
+  height: 100vh;
+
+  ${({ isHidden }) =>
+    !isHidden &&
+    css`
+      backdrop-filter: blur(4px);
+    `}
+`;
 
 export const LinksContainerSty = styled.div`
     color: white;

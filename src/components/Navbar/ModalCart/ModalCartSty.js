@@ -1,12 +1,12 @@
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const CartContainerSty = styled(motion.div)`
   position: absolute;
   background-color: var(--dark-red-union);
   box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.3);
-  width: 500px;
-  height: 500px;
+  width: 450px;
+  height: 100vh;
   top: 100px;
   right: 0px;
   z-index: 99;
@@ -32,15 +32,43 @@ export const ProductContainerStyled = styled.div`
   align-items: center;
   gap: 10px;
   background: var(--gray-bg);
-  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3); */
   padding: 1rem 2rem;
   border-radius: 15px;
+
+  img {
+    height: 125px;
+    width: 125px;
+  }
 `;
 
-export const ImgStock = styled.img`
-  height: 125px;
-  width: 125px;
-`
+export const ProductsWrapperStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  width: 105%;
+  height: 400px;
+  margin: 0 auto;
+  padding: 1rem;
+
+  padding-left: 0;
+
+  overflow: scroll;
+
+  &::-webkit-scrollbar {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar:horizontal {
+    display: none;
+  }
+
+  @media (max-height: 800px) {
+    height: 235px;
+  }
+`;
 
 export const PriceStyled = styled.span`
   font-weight: 800;
@@ -77,5 +105,34 @@ export const TotalStyled = styled(SubtotalStyled)`
 export const ButtonContainerStyled = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
+`;
+
+export const MainContainerStyled = styled.div`
+  height: 55%;
+`;
+
+export const TextContainerStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  width: 190px;
+`;
+
+export const CardTitleStyled = styled.h3`
+  margin: 0;
+  margin-bottom: 2px;
+  font-weight: 500;
+`;
+
+export const TextStyled = styled.p`
+  margin: 0;
+  color: #666;
+  font-size: 1rem;
+`;
+
+export const QuantityContainerStyled = styled.div`
+  display: flex;
   align-items: center;
 `;

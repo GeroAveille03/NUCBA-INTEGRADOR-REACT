@@ -11,10 +11,10 @@ export const IncreaseSty = styled(motion.button)`
     font-weight: 800;
     color: red;
     cursor: pointer;
-
+/* 
     ${({secondary}) =>
         secondary && css`
         background: var(--blue-union);
         `
-    }
+    } */
 `
