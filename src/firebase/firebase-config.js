@@ -11,12 +11,12 @@ export const actionCodeSettingsVerification = {
   url:
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000/"
-      : "linkDeProduccion",
+      : "https://nucba-integrador-react.vercel.app/",
 };
 
 export const actionCodeSettingsForgotPassword = {
   url:
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000/login"
-      : "linkDeProducción",
+      : "https://nucba-integrador-react.vercel.app/",
 };
