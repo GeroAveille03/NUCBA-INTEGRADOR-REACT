@@ -11,12 +11,12 @@ export const actionCodeSettingsVerification = {
   url:
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000/"
-      : "https://nucba-integrador-react.vercel.app/",
+      : "https://tienda-union.onrender.com",
 };
 
 export const actionCodeSettingsForgotPassword = {
   url:
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000/login"
-      : "https://nucba-integrador-react.vercel.app/login",
+      : "https://tienda-union.onrender.com/login",
 };
