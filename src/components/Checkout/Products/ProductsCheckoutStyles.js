@@ -12,6 +12,41 @@ export const CheckoutContainerPriceStyled = styled.div`
   justify-content: center;
 `;
 
+export const CardsWrapperStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 90%;
+  height: 440px;
+  margin: 0 auto;
+  margin-left: -10px;
+
+  overflow: scroll;
+
+  &::-webkit-scrollbar {
+    background: transparent;
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--white-union);
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar:horizontal {
+    display: none;
+  }
+
+  @media (max-height: 800px) {
+    height: 270px;
+  }
+
+  @media (min-width: 1500px) {
+    width: 72%;
+  }
+`;
+
 export const CheckoutSubtotalStyled = styled.div`
   display: flex;
   justify-content: space-between;

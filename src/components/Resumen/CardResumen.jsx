@@ -1,27 +1,27 @@
 import React from 'react';
+import { formatPrice } from '../../utils/formatPrice';
 import {
   ProductLeftStyled,
   ProductPriceStyled,
   ProductStyled,
 } from './CardResumenStyles';
 
-const CardResumen = () => {
+const CardResumen = ({title, desc, quantity, img, price}) => {
   return (
     <ProductStyled>
       <ProductLeftStyled>
         <img
-          src='https://i.imgur.com/SCv52yR.png'
-          alt=''
+          src={img}
+          alt={title}
         />
         <div>
-          <h3>Camiseta Titular 2022</h3>
-          <p>Camiseta Roja y Blanca Titular Kappa</p>
+          <h3>{title}</h3>
+          <p>{desc}</p>
         </div>
       </ProductLeftStyled>
       <div>
-        <p>3U</p>
-        <p>#0002617</p>
-        <ProductPriceStyled>$12400</ProductPriceStyled>
+        <p>{quantity}U</p>
+        <ProductPriceStyled>{formatPrice(price * quantity)}</ProductPriceStyled>
       </div>
     </ProductStyled>
   );

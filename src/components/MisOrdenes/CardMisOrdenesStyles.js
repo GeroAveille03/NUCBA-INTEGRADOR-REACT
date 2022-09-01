@@ -19,6 +19,8 @@ export const PedidoContainerStyled = styled.div`
   align-items: center;
   justify-content: space-between;
   position: relative;
+  cursor: pointer;
+  box-shadow: 1px 3px 1px 2px rgba(0,0,0,0.10)
 `;
 
 export const TextContainerStyled = styled.div`

@@ -49,7 +49,7 @@ const CardsProductos = ({ limited }) => {
         <ButtonContainerStyled>
           <Button
             onClick={() => setLimit(prevLimit => prevLimit - INITIAL_LIMIT)}
-            disabled={INITIAL_LIMIT === limited}
+            disabled={INITIAL_LIMIT <= 9 ? true : false}
           >
             <span>Ver Menos</span>
           </Button>

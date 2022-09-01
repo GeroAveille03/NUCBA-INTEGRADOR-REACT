@@ -7,25 +7,34 @@ import {
   PriceStyled,
   ProductTitleStyled,
 } from './CardProductCheckoutStyles';
+import { useDispatch } from 'react-redux';
+import * as cartActions from '../Redux/cart/cart-actions'
 
-const CardProductCheckout = () => {
+const CardProductCheckout = ({ img, title, desc, price, quantity, id }) => {
+  
+  const dispatch = useDispatch();
+  
   return (
     <CheckoutContainerStyled>
       <CheckoutProductInfoStyled>
         <img
-          src='https://res.cloudinary.com/dcatzxqqf/image/upload/v1656648432/coding/NucbaZappi/Assets/Bennazianna_t40kz2.png'
-          alt=''
+          src={img}
+          alt={title}
         />
         <CheckoutInfoStyled>
-          <ProductTitleStyled>Bennazianna</ProductTitleStyled>
-          <p>Para todo el dia</p>
-          <PriceStyled>$870</PriceStyled>
+          <ProductTitleStyled>{title}</ProductTitleStyled>
+          <p>{desc}</p>
+          <PriceStyled>{price}</PriceStyled>
         </CheckoutInfoStyled>
       </CheckoutProductInfoStyled>
       <div>
-        <Increase>-</Increase>
-        <Count>1</Count>
-        <Increase secondary>+</Increase>
+        <Increase
+        onClick={() => dispatch(cartActions.removeFromCart(id))}
+        >-</Increase>
+        <Count>{quantity}</Count>
+        <Increase
+        onClick={() => dispatch(cartActions.addToCart({ img, title, desc, price, id}))}
+        >+</Increase>
       </div>
     </CheckoutContainerStyled>
   );

@@ -10,6 +10,7 @@ export const ProductosContainer = styled.div`
   width: 100%;
   margin-top: -100px;
   background-color: var(--bordo-bg);
+  scroll-behavior: smooth;
 `;
 
 export const ProductosCard = styled.div`

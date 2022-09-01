@@ -5,10 +5,11 @@ const Button = ({
   children,
   disabled = false,
   onClick = () => "",
+  onSubmit,
 }) => {
   return (
-    <ButtonSty onClick={onClick} disabled={disabled}>
-      <button className="btn" disabled={disabled}>{children}</button>
+    <ButtonSty onClick={onClick} onSubmit={onSubmit}>
+      <button className="btn"  disabled={disabled}>{children}</button>
     </ButtonSty>
   );
 };

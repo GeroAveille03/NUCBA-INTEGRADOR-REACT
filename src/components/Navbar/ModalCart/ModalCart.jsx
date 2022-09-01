@@ -13,13 +13,17 @@ import {
   TitleSty,
   TotalStyled,
 } from "./ModalCartSty";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ModalCartCard from "./ModalCartCard";
 import { formatPrice } from "../../../utils/formatPrice";
+import { useNavigate } from "react-router-dom";
+import * as cartActions from '../../Redux/cart/cart-actions'
 
 const ModalCart = () => {
+  const { cartItems, shippingCost } = useSelector((state) => state.cart);
 
-  const {cartItems, shippingCost} = useSelector(state => state.cart);
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const totalPrice = cartItems.reduce((acc, item) => {
     return (acc += item.price * item.quantity);
@@ -34,44 +38,47 @@ const ModalCart = () => {
       key="cart-modal"
     >
       <MainContainerStyled>
-        
         <TitleSty>
           <h1>Tus Productos</h1>
         </TitleSty>
-        <HrStyled style={{ marginTop: "-10px" }} />
+        <HrStyled style={{ marginTop: "-15px" }} />
 
         <ProductsWrapperStyled>
-        {cartItems.length ? (
-        cartItems.map(item => <ModalCartCard key={item.id} {...item}/> )
-      ) : (
-        <p>¡Tu carrito está vacío!</p>
-      )}
+          {cartItems.length ? (
+            cartItems.map((item) => <ModalCartCard key={item.id} {...item} />)
+          ) : (
+            <p>¡Tu carrito está vacío!</p>
+          )}
         </ProductsWrapperStyled>
-      
       </MainContainerStyled>
-        
-        <PriceContainerStyled>
-          <SubtotalStyled>
-            <p>Subtotal:</p>
-            <span>{formatPrice(totalPrice)}</span>
-          </SubtotalStyled>
-          <EnvioStyled>
-            <p>Envío</p>
-            <span>{formatPrice(shippingCost)}</span>
-          </EnvioStyled>
-          <hr />
-          <TotalStyled>
-            <p>Total:</p>
-            <PriceStyled>{formatPrice(totalPrice + shippingCost)}</PriceStyled>
-          </TotalStyled>
-          <ButtonContainerStyled>
-            <Submit
+
+      <PriceContainerStyled>
+        <SubtotalStyled>
+          <p>Subtotal:</p>
+          <span>{formatPrice(totalPrice)}</span>
+        </SubtotalStyled>
+        <EnvioStyled>
+          <p>Envío</p>
+          <span>{formatPrice(shippingCost)}</span>
+        </EnvioStyled>
+        <hr />
+        <TotalStyled>
+          <p>Total:</p>
+          <PriceStyled>{formatPrice(totalPrice + shippingCost)}</PriceStyled>
+        </TotalStyled>
+        <ButtonContainerStyled>
+          <Submit
             value={"Iniciar Pedido"}
-            >
-              Iniciar Pedido
-            </Submit>
-          </ButtonContainerStyled>
-        </PriceContainerStyled>
+            disabled={cartItems.length === 0}
+            onClick={() => {
+              navigate("/checkout")
+              dispatch(cartActions.toggleHiddenCart())
+            }}
+          >
+            Iniciar Pedido
+          </Submit>
+        </ButtonContainerStyled>
+      </PriceContainerStyled>
     </CartContainerSty>
   );
 };

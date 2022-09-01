@@ -18,8 +18,8 @@ const Felicitaciones = () => {
           <h1 style={{fontSize: '2.3em'}}>¡!</h1>
           <p style={{fontSize: '1.8em'}}>Tu pedido fue realizado</p>
         </ContainerInfoStyled>
-        <Link to='/resumen'>
-          <Button>Volver</Button>
+        <Link to='/mis-ordenes'>
+          <Button>Mis Ordenes</Button>
         </Link>
       </TextStyled>
     </div>

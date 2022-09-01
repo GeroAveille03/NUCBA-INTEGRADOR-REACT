@@ -1,6 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import CardResumen from '../../components/Resumen/CardResumen';
+import React, { useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import CardResumen from "../../components/Resumen/CardResumen";
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { useDispatch } from "react-redux/es/hooks/useDispatch";
 import {
   CostoEnvioStyled,
   CostoProductoStyled,
@@ -10,36 +12,65 @@ import {
   ResumenContainerInfoStyled,
   ResumenContainerStyled,
   ResumenTitleStyled,
-} from './ResumenSty';
+} from "./ResumenSty";
+import { useEffect } from "react";
+import * as ordersActions from '../../components/Redux/orders/orders-actions'
+import { formatPrice } from "../../utils/formatPrice";
+import Button from "../../components/UI/Button/Button";
 
 const Resumen = () => {
+  const [visitedOrder, setVisitedOrder] = useState(null);
+  const currentUser = useSelector(state => state.user.currentUser)
+  const orders = useSelector(state => state.orders.orders)
+  const dispatch = useDispatch()
+  const {orderId} = useParams()
+
+  useEffect(() => {
+    if(!orders.length && currentUser?.Id) {
+      dispatch(ordersActions.getFullOrders(currentUser?.Id))
+    }
+    setVisitedOrder(orders.find(order => order.id === orderId))
+  }, [orderId, currentUser?.Id, orders, dispatch])
+
   return (
     <ResumenContainerStyled>
       <ResumenTitleStyled>
-        <h1>Resumen Orden: #0002617</h1>
-        <Link borderRadius='20' to='/mis-ordenes'></Link>
+        <h1>Resumen Orden: #{visitedOrder?.id.slice(0, 7)}</h1>
+        <Link borderRadius="20" to="/mis-ordenes"></Link>
       </ResumenTitleStyled>
       <h2>Productos:</h2>
       <ProductsContainerStyled>
-        <CardResumen />
-        <CardResumen />
+        
+        
+        {
+          visitedOrder?.items.map(item => (
+            <CardResumen 
+            key={item.id} {...item}
+            />
+          ))
+        }
+      
+      
       </ProductsContainerStyled>
       <HrStyled />
       <ResumenContainerInfoStyled>
         <h3>Costos:</h3>
         <CostoProductoStyled>
           <p>Costo de productos</p>
-          <span>$200</span>
+          <span>{formatPrice(visitedOrder?.price)}</span>
         </CostoProductoStyled>
         <CostoEnvioStyled>
           <p>Costo de envío</p>
-          <span>$250</span>
+          <span>{formatPrice(visitedOrder?.shippingCost)}</span>
         </CostoEnvioStyled>
         <CostoTotalStyled>
           <p>Total</p>
-          <span>$450</span>
+          <span>{formatPrice(visitedOrder?.total)}</span>
         </CostoTotalStyled>
       </ResumenContainerInfoStyled>
+        <Link to='/mis-ordenes'>
+          <Button>Volver</Button>
+        </Link>
     </ResumenContainerStyled>
   );
 };

@@ -6,8 +6,8 @@ export const CartContainerSty = styled(motion.div)`
   background-color: var(--dark-red-union);
   box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.3);
   width: 450px;
-  height: 100vh;
-  top: 100px;
+  height: 85vh;
+  top: 95px;
   right: 0px;
   z-index: 99;
   border-radius: 0 0 1rem 1rem;
@@ -19,7 +19,7 @@ export const TitleSty = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 0.7em;
-  margin-top: -30px;
+  margin-top: -40px;
 `;
 
 export const HrStyled = styled.hr`
@@ -31,9 +31,7 @@ export const ProductContainerStyled = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  background: var(--gray-bg);
-  /* box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3); */
-  padding: 1rem 2rem;
+  padding: 0rem 2rem;
   border-radius: 15px;
 
   img {
@@ -46,14 +44,13 @@ export const ProductsWrapperStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
-
+  gap: 20px;
   width: 105%;
   height: 400px;
   margin: 0 auto;
   padding: 1rem;
-
-  padding-left: 0;
+  margin-top: -1rem;
+  margin-left: -2rem;
 
   overflow: scroll;
 
@@ -61,12 +58,17 @@ export const ProductsWrapperStyled = styled.div`
     background: transparent;
   }
 
+  &::-webkit-scrollbar-thumb {
+    background: var(--white-union);
+    border-radius: 5px;
+  }
+
   &::-webkit-scrollbar:horizontal {
     display: none;
   }
 
   @media (max-height: 800px) {
-    height: 235px;
+    height: 325px;
   }
 `;
 
@@ -76,7 +78,7 @@ export const PriceStyled = styled.span`
 `;
 
 export const PriceContainerStyled = styled.div`
-  margin-top: 5rem;
+  margin-top: 5.5rem;
 
   & p {
     text-align: center;
@@ -128,7 +130,7 @@ export const CardTitleStyled = styled.h3`
 
 export const TextStyled = styled.p`
   margin: 0;
-  color: #666;
+  color: white;
   font-size: 1rem;
 `;
 

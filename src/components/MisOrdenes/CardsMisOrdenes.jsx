@@ -1,20 +1,30 @@
 import CardMisOrdenes from './CardMisOrdenes';
 import { MisOrdenesContainerStyled } from './CardMisOrdenesStyles';
-import { pedidos } from '../../data/MisOrdenes';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
 
 const CardsMisOrdenes = () => {
+  
+  const {orders, loading, error} = useSelector(state => state.orders)
+
+  if(loading && !orders.length){
+    return 
+  }
+
+  if(error){
+    return <h2>{error.message}</h2>
+  }
+  
   return (
     <MisOrdenesContainerStyled>
-      {pedidos.map(pedido => (
-        <CardMisOrdenes
-          key={pedido.id}
-          title={pedido.title}
-          imgSource={pedido.img}
-          pedido={pedido.pedido}
-          price={pedido.price}
-          status={pedido.status}
-        />
-      ))}
+      
+      {orders.length ? (
+        orders.map(order => <CardMisOrdenes 
+        key={order.id} {...order}/>)
+        ) : (
+          <h2>¿Que esperas para hacer tu primer pedido?</h2>
+        )
+    }
+
     </MisOrdenesContainerStyled>
   );
 };

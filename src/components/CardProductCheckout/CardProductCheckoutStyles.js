@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 
 export const CheckoutContainerStyled = styled.div`
-  background: var(--gray-bg);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 15px;
-  max-width: 80%;
+  width: 110%;
   padding: 1.5rem;
   height: 100px;
   margin-top: 25px;
+  gap: 60px;
 `;
 
 export const CheckoutProductInfoStyled = styled.div`
@@ -17,6 +16,11 @@ export const CheckoutProductInfoStyled = styled.div`
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
+  
+  img{
+    width: 125px;
+    height: 125px;
+  }
 `;
 
 export const CheckoutInfoStyled = styled.div`

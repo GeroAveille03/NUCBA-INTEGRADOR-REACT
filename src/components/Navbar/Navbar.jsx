@@ -7,7 +7,7 @@ import {
   UserNavSty,
   ModalOverlaySty,
 } from "./NavbarSty";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { HiHome } from "react-icons/hi";
 import { FaUserAlt, FaShoppingCart } from "react-icons/fa";
 import { AnimatePresence } from "framer-motion";
@@ -15,11 +15,14 @@ import ModalUser from "./ModalUser/ModalUser";
 import ModalCart from "./ModalCart/ModalCart";
 import { useSelector, useDispatch } from "react-redux";
 import * as cartActions from '../Redux/cart/cart-actions'
+import * as userActions from '../Redux/user/user-actions'
 
 const Navbar = () => {
   const [openUser, setOpenUser] = useState();
+  const {hiddenMenu, currentUser} = useSelector(state => state.user)
 
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   useEffect(() =>{
     if(!hiddenCart){
@@ -41,10 +44,11 @@ const Navbar = () => {
       }
 
       <AnimatePresence>{!hiddenCart && <ModalCart />}</AnimatePresence>
+      <AnimatePresence>{!hiddenMenu && <ModalUser />}</AnimatePresence>
 
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {openUser && <ModalUser closeModal={setOpenUser} />}
-      </AnimatePresence>
+      </AnimatePresence> */}
       <div>
         <Link to="/">
           <LogoSty src="https://i.imgur.com/nAc9UkE.png" alt="" />
@@ -70,11 +74,15 @@ const Navbar = () => {
           {/* <Link to=""> */}
           <LinkContainerSty
             onClick={() => {
-              setOpenUser(!openUser);
+              currentUser
+              ? dispatch(userActions.toggleMenuHidden())
+              : navigate('./register')
             }}
           >
             <FaUserAlt />
-            <span>Iniciá Sesión</span>
+            <span>{
+            currentUser ? `${currentUser.displayName}` : 'Iniciá Sesión'
+          }</span>
           </LinkContainerSty>
           {/* </Link> */}
           {/* <ModalUser /> */}

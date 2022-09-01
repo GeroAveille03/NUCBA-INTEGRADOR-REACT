@@ -1,55 +1,92 @@
-import React from 'react';
-import Input from '../../UI/Input/Input';
-import Submit from '../../UI/Submit/Submit';
+import React from "react";
+import Input from "../../UI/Input/Input";
+import Submit from "../../UI/Submit/Submit";
 import {
   CheckoutDatosStyled,
   CheckoutFormContainerStyled,
   CheckoutFormStyled,
-} from './CheckoutFormStyles';
+} from "./CheckoutFormStyles";
+import {
+  checkoutInitialValues,
+  checkoutValidationSchema,
+} from "../../../formik";
+import { useDispatch } from "react-redux/es/exports";
+import * as orderActions from "../../Redux/orders/orders-actions";
+import * as cartActions from "../../Redux/cart/cart-actions";
 
-const CheckoutForm = () => {
+import { Formik, Form } from "./CheckoutFormStyles";
+import { useNavigate } from "react-router-dom";
+
+const CheckoutForm = ({ cartItems, price, shippingCost }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   return (
     <CheckoutDatosStyled>
       <h2>Ingresá tus datos</h2>
-      <CheckoutFormContainerStyled>
-        <CheckoutFormStyled>
+      <Formik
+        initialValues={checkoutInitialValues}
+        validationSchema={checkoutValidationSchema}
+        onSubmit={async (values) => {
+          const orderData = {
+            cartItems,
+            price,
+            shippingCost,
+            total: price + shippingCost,
+            shippingDetails: { ...values },
+          };
+          try {
+            await dispatch(orderActions.createOrder(orderData));
+            navigate('/felicitaciones');
+            dispatch(cartActions.clearCart());
+          } catch (error) {
+            alert('Error al crear la orden');
+          }
+        }}
+      >
+        <Form>
           <Input
-            htmlFor='nombre'
-            type='text'
-            id='nombre'
-            placeholder='Tu nombre'
+            name="name"
+            htmlFor="nombre"
+            type="text"
+            id="nombre"
+            placeholder="Tu nombre"
           >
             Nombre
           </Input>
           <Input
-            htmlFor='celular'
-            type='text'
-            id='celular'
-            placeholder='Tu celular'
+            name="cellphone"
+            htmlFor="celular"
+            type="text"
+            id="celular"
+            placeholder="Tu celular"
           >
             Celular
           </Input>
           <Input
-            htmlFor='localidad'
-            type='text'
-            id='localidad'
-            placeholder='Tu localidad'
+            name="location"
+            htmlFor="localidad"
+            type="text"
+            id="localidad"
+            placeholder="Tu localidad"
           >
             Localidad
           </Input>
           <Input
-            htmlFor='direccion'
-            type='text'
-            id='dirección'
-            placeholder='Tu dirección'
+            name="address"
+            htmlFor="direccion"
+            type="text"
+            id="dirección"
+            placeholder="Tu dirección"
           >
             Dirección
           </Input>
-        </CheckoutFormStyled>
-        <div>
-          <Submit value='Iniciar pedido' />
-        </div>
-      </CheckoutFormContainerStyled>
+
+          <div>
+            <Submit value="Iniciar Pedido">Iniciar pedido</Submit>
+          </div>
+        </Form>
+      </Formik>
     </CheckoutDatosStyled>
   );
 };
