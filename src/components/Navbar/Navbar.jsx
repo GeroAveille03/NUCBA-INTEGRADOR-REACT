@@ -76,7 +76,7 @@ const Navbar = () => {
             onClick={() => {
               currentUser
               ? dispatch(userActions.toggleMenuHidden())
-              : navigate('./register')
+              : navigate('./login')
             }}
           >
             <FaUserAlt />

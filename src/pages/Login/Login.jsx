@@ -1,6 +1,6 @@
 import React from "react";
 import Submit from "../../components/UI/Submit/Submit";
-import { Field, ErrorMessage } from 'formik';
+import { Field, ErrorMessage } from "formik";
 import {
   signInUser,
   signInWithGoogle,
@@ -22,8 +22,7 @@ import { loginInitialValues, loginValidationSchema } from "../../formik/index";
 import useRedirect from "../../hooks/useRedirect";
 
 const Login = () => {
-
-  useRedirect('/')
+  useRedirect("/");
 
   const LoginInput = ({ name, type, placeholder }) => {
     return (
@@ -37,7 +36,7 @@ const Login = () => {
               isError={errors[field.name] && touched[field.name]}
             />
             <ErrorMessage name={field.name}>
-              {message => <ErrorMessageStyled>{message}</ErrorMessageStyled>}
+              {(message) => <ErrorMessageStyled>{message}</ErrorMessageStyled>}
             </ErrorMessage>
           </InputContainerStyled>
         )}
@@ -68,7 +67,7 @@ const Login = () => {
         <Form>
           <LoginInput name="email" type="text" placeholder="Email" />
           <LoginInput name="password" type="password" placeholder="Password" />
-            <Submit>Ingresar</Submit>
+          <Submit>Ingresar</Submit>
           <Link to="/forgot-password">
             <LoginPasswordStyled>
               ¿Olvidaste la contraseña? Reestablecela

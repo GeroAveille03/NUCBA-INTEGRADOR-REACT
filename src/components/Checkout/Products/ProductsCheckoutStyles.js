@@ -17,7 +17,7 @@ export const CardsWrapperStyled = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 5px;
-  width: 90%;
+  width: 75%;
   height: 440px;
   margin: 0 auto;
   margin-left: -10px;
@@ -42,8 +42,8 @@ export const CardsWrapperStyled = styled.div`
     height: 270px;
   }
 
-  @media (min-width: 1500px) {
-    width: 72%;
+  @media (max-width: 1500px) {
+    width: 90%;
   }
 `;
 

@@ -20,17 +20,17 @@ function Routes() {
         <Route path='/products' element={<Products />} />
         <Route path='/mis-ordenes' element={<MisOrdenes />} />
         <Route path='/felicitaciones' element={<Felicitaciones />} />
-        {/* <Route path='/checkout' element={<Checkout/>} /> */}
+        <Route path='/checkout' element={<Checkout/>} />
         <Route path='/resumen/:orderId' element={<Resumen />} />
         <Route path='/forgot-password' element={<ForgotPassword />} />
         <Route path='*' element={<PageNotFound />} />
-
+{/* 
         <Route path='/checkout' 
         element={<ProtectedRoute redirectTo='/register'>
           <Checkout />
         </ProtectedRoute>
           }
-        />  
+        />   */}
 
         
 
